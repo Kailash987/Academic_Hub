@@ -108,6 +108,7 @@ export async function POST(req: Request) {
       plagiarism: reportJson.data.report.percent,
       sources_count: reportJson.data.report.source_count,
       text_id: textId,
+      extracted_text: textContent,
     });
 
   } catch (error) {

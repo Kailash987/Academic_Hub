@@ -26,7 +26,7 @@ export default function LandingPage() {
         </div>
         <div className="relative">
           <Image
-            src={`/placeholder.svg?height=480&width=640&query=students%20studying%20with%20laptops%20and%20books`}
+            src={`/placeholder.jpeg?height=480&width=640&query=students%20studying%20with%20laptops%20and%20books`}
             alt="Students studying with laptops and books illustration"
             width={640}
             height={480}

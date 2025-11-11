@@ -11,15 +11,24 @@ export function SummaryCard({
   snippet: string
 }) {
   return (
-    <Card className="h-full flex flex-col">
+    <Card className="h-full flex flex-col hover:shadow-md transition-shadow">
       <CardHeader className="pb-3">
-        <CardTitle className="text-base">{title}</CardTitle>
+        <CardTitle className="text-base font-semibold">{title}</CardTitle>
         <div className="text-xs text-muted-foreground">{date}</div>
       </CardHeader>
       <CardContent className="flex-1 flex flex-col gap-3">
-        <p className="text-sm text-muted-foreground">{snippet}</p>
+        {/* ✳️ Preview with bullet formatting */}
+        <div className="text-sm text-muted-foreground line-clamp-3 whitespace-pre-line">
+          {snippet.split("\n").map((line, idx) => (
+            <div key={idx}>• {line.trim()}</div>
+          ))}
+        </div>
+
         <div className="mt-auto">
-          <Button size="sm" className="bg-secondary text-secondary-foreground hover:opacity-90">
+          <Button
+            size="sm"
+            className="bg-secondary text-secondary-foreground hover:opacity-90 w-full"
+          >
             Expand
           </Button>
         </div>
